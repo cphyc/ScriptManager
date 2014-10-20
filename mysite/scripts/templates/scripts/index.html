@@ -1,0 +1,9 @@
+{% if latest_script_list %}
+    <ul>
+    {% for script in latest_script_list %}
+        <li><a href="{% url 'detail' script.id %}">{{ script.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No script saved.</p>
+{% endif %}

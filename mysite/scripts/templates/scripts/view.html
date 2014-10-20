@@ -1,0 +1,41 @@
+<!doctype html>
+{% load highlight_code %}
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Script : {{ script.title }}</title>
+
+  <link rel="stylesheet" href="{% static 'scripts/autumn.css' %}">
+  <link rel="stylesheet" href="{% static 'scripts/layout.css' %}">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <header>
+    <a href="{% url 'index' %}">Back to the index</a>
+    <div id="info">
+      <ul>
+	<li><span>[name]</span><br/>
+	  {{ script.title }}</li>
+	<li><span>[published]</span><br/>
+	  {{ script.pub_date | date }}</li>
+	<li><span>[update]</span><br/>
+	  {{ script.laste_update | time }}</li>
+	<li><span>[langage]</span><br/>
+	  {{ script.langage }}</li>
+	<li><span>[folder]</span><br/>
+	  {{ script.folder }}</li>
+      </ul>
+    </div>
+  </header>
+  <content>
+    {{ script.code | formatCode:script.title | safe }}
+  </content>
+</body>
+</html>

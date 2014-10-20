@@ -1,0 +1,39 @@
+#info {
+    overflow: auto;
+    width: 100%;
+}
+
+#info li {
+    float: left;
+    min-width: 20%;
+    list-style-type: none;
+}
+#info li span {
+    font-weight: bold;
+}
+
+.commented_block {
+    width: 100%;
+}
+.floating_comment {
+    float:right;
+    font-size: 0.8em;
+    display: block;
+    width: 50%;
+    position: relative;
+    left: 10px;
+}
+
+.code {
+    border-right: solid 1px #CCC ;
+    border-bottom: dashed 1px #EEE ;
+    border-top: dashed 1px #EEE ;
+    width:50%;
+}
+.code .floating_comment {
+    white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
+    white-space: -pre-wrap; /* Opera 4 - 6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
+    word-wrap: break-word; /* IE 5.5+ */
+}
